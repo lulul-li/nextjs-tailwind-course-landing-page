@@ -22,8 +22,8 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA --build-arg=VUE_APP_APIURL=https://plutus-4ef3ilabma-de.a.run.app .
-      
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA .
+
     - name: Push the Docker image
       run: |
         docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA
