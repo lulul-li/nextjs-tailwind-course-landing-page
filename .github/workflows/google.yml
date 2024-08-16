@@ -22,11 +22,11 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA .
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/mercury:$GITHUB_SHA .
 
     - name: Push the Docker image
       run: |
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/mercury:$GITHUB_SHA
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,8 +42,8 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        gcloud run deploy Mercury \
-          --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/Mercury:$GITHUB_SHA \
+        gcloud run deploy mercury \
+          --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/mercury:$GITHUB_SHA \
           --region asia-east1 \
           --platform managed \
           --allow-unauthenticated
