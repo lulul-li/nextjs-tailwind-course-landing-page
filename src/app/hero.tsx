@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button, Typography, Card } from "@material-tailwind/react";
+import React from "react";
 
 function Hero() {
   return (
@@ -9,7 +10,7 @@ function Hero() {
       <Image
         width={1200}
         height={1200}
-        src="/image/image8.svg"
+        src="/image/banner.png"
         alt="bg-img"
         className="absolute inset-0 ml-auto w-[920px] h-[780px] rounded-bl-[100px] object-cover object-center"
       />
@@ -20,49 +21,15 @@ function Hero() {
               variant="h1"
               color="blue-gray"
               className="lg:text-5xl !leading-snug text-3xl lg:max-w-3xl"
-            >
-              Unlock the Power of the Web with Our Expert Courses
+            >Simplify Global Transactions with Our Currency Exchange Platform
+
             </Typography>
-            <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">
-              Are you ready to embark on an exciting journey into the world of
-              web development? Look no further! We are your trusted partner for
-              mastering the art of web development.
-            </Typography>
+            <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">Are you ready to manage your finances across borders effortlessly? Look no further! Our platform allows you to deposit, transfer, and withdraw funds in multiple currencies with ease. We are your trusted partner for fast, secure, and seamless currency exchange.</Typography>
             <div className="mb-8 flex justify-center gap-4 lg:justify-start">
-              <Button color="gray">view all courses</Button>
+              <Button color="gray">Creat Account</Button>
               <Button color="gray" variant="outlined">
-                see pricing
+                See Exchange Rates
               </Button>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4 lg:justify-start">
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-pinterest.svg"
-                alt="pinterest"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-netflix.svg"
-                alt="netflix"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-coinbase.svg"
-                alt="coinbase"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-google.svg"
-                alt="google"
-              />
             </div>
           </Card>
         </div>

@@ -17,12 +17,6 @@ export default function Campaign() {
       <Navbar />
       <Hero />
       <OutImpressiveStats />
-      <CoursesCategories />
-      <ExploreCourses />
-      <Testimonial />
-      <Events />
-      <StudentsFeedback />
-      <TrustedCompany />
       <Footer />
     </>
   );
