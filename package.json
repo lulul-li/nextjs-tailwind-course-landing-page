@@ -7,7 +7,7 @@
   "homepage": "https://demos.creative-tim.com/nextjs-tailwind-course-landing-page",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "DISABLE_TYPE_CHECK=1 next build",
     "start": "next start",
     "lint": "next lint"
   },

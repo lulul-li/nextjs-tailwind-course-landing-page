@@ -1,32 +1,38 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14 as build-stage
-
-# Set the working directory in the container
+# Install dependencies
+FROM node:18-alpine AS deps
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
-
-# Install project dependencies
+COPY package.json package-lock.json ./
 RUN npm install
 
-# Copy the entire project to the container
+# Build the project
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ARG VUE_APP_APIURL
-ENV VUE_APP_APIURL=${VUE_APP_APIURL}
-# Build the Vue.js application for production
 RUN npm run build
 
-# Use a smaller image as the final runtime image
-FROM nginx:alpine
+# Production image
+FROM node:18-alpine AS runner
+WORKDIR /app
 
-# Copy the built Vue.js application from the build-stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Create user and group
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Expose port 80 for the Nginx web server
-EXPOSE 80
+# Set environment variables
+ENV NEXT_TELEMETRY_DISABLED 1
 
-ENV PORT 80
+# Copy required files for running the application
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder /app/node_modules ./node_modules
 
-# Start Nginx when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+# Set user and permissions
+USER nextjs
+
+# Expose the port and start the application
+EXPOSE 3000
+ENV PORT 3000
+
+CMD ["node", "server.js"]

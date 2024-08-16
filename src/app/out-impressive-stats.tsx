@@ -8,9 +8,8 @@ import {
   PencilSquareIcon,
   PhoneArrowDownLeftIcon,
 } from "@heroicons/react/24/solid";
+import {ExchangeTable} from "../components/exchange-table";
 
-import StatsCard from "@/components/stats-card";
-import {ExchangeTable} from "@/components/exchange-table";
 
 
 const STATS = [
