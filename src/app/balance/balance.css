@@ -1,0 +1,134 @@
+.b-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.balance-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.total-balance {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.balance-amount {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.take-out-button {
+    background-color: #ecf0f1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-funds-button {
+    background-color: #f0b90b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.allocation-section {
+    margin-bottom: 30px;
+}
+
+.allocation-title {
+    margin-bottom: 10px;
+}
+
+.allocation-chart {
+    width: 100%;
+    height: auto;
+}
+
+.allocation-details {
+    margin-top: 10px;
+}
+
+.allocation-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dot.tetherus {
+    background-color: #007bff;
+}
+
+.dot.aud {
+    background-color: #85c1e9;
+}
+
+.dot.others {
+    background-color: #ffd700;
+}
+
+.currency-list {
+    margin-top: 20px;
+}
+
+.currency-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.currency-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.currency-details {
+    flex: 1;
+}
+
+.currency-name {
+    font-size: 16px;
+    margin: 0;
+}
+
+.currency-amount {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
