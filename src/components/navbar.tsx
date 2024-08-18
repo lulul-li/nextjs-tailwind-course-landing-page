@@ -25,21 +25,22 @@ const NAV_MENU = [
     {
         name: "Deposit",
         icon: PiHandDepositBold,
-        href: "https://www.material-tailwind.com/docs/react/installation",
+        href: "/deposit",
     },
     {
         name: "Transfer",
         icon: BiTransfer,
-        href: "https://www.material-tailwind.com/docs/react/installation",
+        href: "/transfer",
     },
     {
         name: "Withdraw",
         icon: PiHandWithdrawBold,
-        href: "https://www.material-tailwind.com/docs/react/installation",
+        href: "withdraw",
     },
     {
         name: "Balance",
         icon: UserCircleIcon,
+        href: "/balance",
     },
 ];
 
