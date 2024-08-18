@@ -8,8 +8,8 @@ import {Select, Option, Input} from "@material-tailwind/react";
 
 
 
-const deposit = () => {
-    const [value, setValue] = React.useState("react");
+const Deposit = () => {
+    const [value, setValue] = useState("react");
     const [amount, setAmount] = useState('');
 
     const handleAmountChange = (e) => {
@@ -95,4 +95,4 @@ const deposit = () => {
     )
 }
 
-export default deposit;
+export default Deposit;

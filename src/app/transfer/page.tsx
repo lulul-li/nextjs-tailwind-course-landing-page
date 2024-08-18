@@ -1,42 +1,37 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
-import React, {useState} from 'react';
-import {Navbar} from "../../components";
-import {Select, Option, Input} from "@material-tailwind/react";
+import React, { useState } from 'react';
+import { Navbar } from "../../components";
 import './transfer.css';
 
-const transfer = () => {
-
-    const [value, setValue] = React.useState("react");
+const Transfer = () => {
+    const [value, setValue] = useState("react");
     const [fromCurrency, setFromCurrency] = useState('USDT');
     const [toCurrency, setToCurrency] = useState('BTC');
-
     const [fromAmount, setFromAmount] = useState('');
     const [toAmount, setToAmount] = useState('');
     const availableAmount = 120.53708561;
 
     const handleFromAmountChange = (e) => {
         setFromAmount(e.target.value);
-        // Here, you would typically calculate the `toAmount` based on the exchange rate
-
-        setToAmount(e.target.value * 0.17); // Example conversion rate
+        // Example conversion rate
+        setToAmount(e.target.value * 0.17);
     };
 
     const handleMaxClick = () => {
         setFromAmount(availableAmount);
-        setToAmount(availableAmount ); // Example conversion rate
+        setToAmount(availableAmount * 0.17); // Adjusted to include conversion rate
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Handle form submission logic here
+    };
 
-
-    }
     return (
-
         <>
-            <Navbar></Navbar>
+            <Navbar />
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
@@ -57,14 +52,14 @@ const transfer = () => {
                                     <div className="currency-label">From</div>
                                     <div className="currency-select">
                                         <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
-                                            <option value="1">USDT</option>
-                                            <option value="2">台幣</option>
-                                            <option value="3">🇪🇺歐元</option>
-                                            <option value="4">🇬🇧英鎊</option>
-                                            <option value="5">🇯🇵日圓</option>
-                                            <option value="6">🇨🇦加元</option>
-                                            <option value="7">🇨🇳人民幣</option>
-                                            <option value="8">🇦🇺澳元</option>
+                                            <option value="USDT">USDT</option>
+                                            <option value="TWD">台幣</option>
+                                            <option value="EUR">🇪🇺歐元</option>
+                                            <option value="GBP">🇬🇧英鎊</option>
+                                            <option value="JPY">🇯🇵日圓</option>
+                                            <option value="CAD">🇨🇦加元</option>
+                                            <option value="CNY">🇨🇳人民幣</option>
+                                            <option value="AUD">🇦🇺澳元</option>
                                         </select>
                                     </div>
                                     <div className="amount-input">
@@ -88,14 +83,14 @@ const transfer = () => {
                                     <div className="currency-label">To</div>
                                     <div className="currency-select">
                                         <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
-                                            <option value="1">USDT</option>
-                                            <option value="2">台幣</option>
-                                            <option value="3">🇪🇺歐元</option>
-                                            <option value="4">🇬🇧英鎊</option>
-                                            <option value="5">🇯🇵日圓</option>
-                                            <option value="6">🇨🇦加元</option>
-                                            <option value="7">🇨🇳人民幣</option>
-                                            <option value="8">🇦🇺澳元</option>
+                                            <option value="USDT">USDT</option>
+                                            <option value="TWD">台幣</option>
+                                            <option value="EUR">🇪🇺歐元</option>
+                                            <option value="GBP">🇬🇧英鎊</option>
+                                            <option value="JPY">🇯🇵日圓</option>
+                                            <option value="CAD">🇨🇦加元</option>
+                                            <option value="CNY">🇨🇳人民幣</option>
+                                            <option value="AUD">🇦🇺澳元</option>
                                         </select>
                                     </div>
                                     <div className="amount-input">
@@ -121,16 +116,12 @@ const transfer = () => {
                         </div>
                     </form>
                     <p className="mt-10 text-center text-sm text-gray-500">
-
                         <Link className='text-blue-700 font-bold' href="/">Back to Lobby</Link>
                     </p>
-
-
                 </div>
             </div>
-
         </>
     )
 }
 
-export default transfer;
+export default Transfer;

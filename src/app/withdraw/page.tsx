@@ -8,8 +8,8 @@ import {Select, Option, Input} from "@material-tailwind/react";
 
 
 
-const withdraw = () => {
-    const [value, setValue] = React.useState("react");
+const Withdraw = () => {
+    const [value, setValue] = useState("react");
     const [amount, setAmount] = useState('');
     const handleAmountChange = (e) => {
         setAmount(e.target.value);
@@ -103,4 +103,4 @@ const withdraw = () => {
     )
 }
 
-export default withdraw;
+export default Withdraw;
