@@ -15,6 +15,7 @@ import {
 import {PiHandDepositBold, PiHandWithdrawBold} from "react-icons/pi";
 import {BiTransfer} from "react-icons/bi";
 import Link from "next/link";
+import LanguageSwitcher from "./lang-switcher";
 
 const NAV_MENU = [
     {
@@ -89,7 +90,7 @@ export function Navbar() {
                 >
                     <div className="flex items-center justify-between">
                         <Typography color="blue-gray" className="text-lg font-bold">
-                            GlobeXChange
+                            Momo Pay
                         </Typography>
                         <ul className="ml-10 hidden items-center gap-8 lg:flex">
                             {NAV_MENU.map(({name, icon: Icon, href}) => (

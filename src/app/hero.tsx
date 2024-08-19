@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { Button, Typography, Card } from "@material-tailwind/react";
 import React from "react";
+import { useTranslation } from 'react-i18next';
+import Link from "next/link";
 
-function Hero() {
+
+function Hero({ onScrollToStats }) {
+  const { t } = useTranslation('common');
   return (
     <div className="!flex h-[55vh] w-full items-center justify-between px-10">
       <Image
@@ -21,14 +25,17 @@ function Hero() {
               variant="h1"
               color="blue-gray"
               className="lg:text-5xl !leading-snug text-3xl lg:max-w-3xl"
-            >Simplify Global Transactions with Our Currency Exchange Platform
-
+            > 輕鬆簡化全球交易，使用我們的外幣交易平台
             </Typography>
-            <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">Are you ready to manage your finances across borders effortlessly? Look no further! Our platform allows you to deposit, transfer, and withdraw funds in multiple currencies with ease. We are your trusted partner for fast, secure, and seamless currency exchange.</Typography>
+            <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">
+              準備好輕鬆管理您的跨國財務了嗎？不用再找了！我們的平台讓您可以輕鬆存款、轉帳和提取多種貨幣。我們是您快速、安全、無縫貨幣交易的值得信賴的夥伴。
+              </Typography>
             <div className="mb-8 flex justify-center gap-4 lg:justify-start">
-              <Button color="gray">Creat Account</Button>
-              <Button color="gray" variant="outlined">
-                See Exchange Rates
+              <Link href="/signup" passHref>
+              <Button color="gray"> 建立帳戶</Button>
+              </Link>
+              <Button color="gray" variant="outlined" onClick={onScrollToStats}>
+                查看匯率
               </Button>
             </div>
           </Card>
